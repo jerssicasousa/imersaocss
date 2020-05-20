@@ -1,11 +1,46 @@
+/*O código do asterisco é o "reset css"*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
-    background-image:url('https://images.unsplash.com/photo-1517008729672-a63ddcf53acb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1052&q=80');
     background-size: auto 100vh;
     height: 100vh;
-    font-family: Arial;
+    font-family: 'Questrial', sans-serif;
+
   }
+ 
+  /*Se a tela tiver pelo menos 400px vai carregar isso*/
+  @media(min-width:300px){
+    body{
+      font-size: 16px;
+    }
+    
+  }
+  @media(min-width:600px){
+    body{
+      font-size: 20px;
+    }
+  }
+
+  header{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  h1{
+    padding: 10px;
+  }
+  
   .menu{
-    background-color: whitesmoke;
+    background-color: rgba(255,255,255,.5);
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 1;
   }
   .menu li {
     list-style:none;
@@ -13,20 +48,165 @@ body {
   .menu ul {
     display: flex;
     justify-content: space-around;
+  
   }
+  .menu a {
+    display: block;
+    padding: 10px;
+    transition: background-color 1s, color 1s;
+  }
+
+  .menu a:active, 
+  .menu a:hover{
+    color: #fdfbfb;
+    background-color:  rgba(105,105,105, .5);
+  }
+
   a{
     text-decoration: none;
-    color: black;
+    color: #696969;
   }
-  a:hover{
+
+  /*.titulo {
+    transform: scale(.2) translateY(50vh);
+    opacity: 0;
+    animation: linear 2s animacaoTitulo;
+  }
+
+  @keyframes animacaoTitulo{
+    100%{
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  }*/
+
+  .index {
+    background-image: url('../img/fundo-branco.png');
+    background-position: center center;
+  }
+  .sobre {
+    background-image: url('../img/projetos.png');
+    background-position: center center;
+  }
+  .sobre a{
     text-decoration: underline;
   }
+  .sobre a:hover{
+    text-decoration: none;
+  }
+  .sobre .avatar{
+    float: left;
+    margin-right: 4em;
+    
+    
+  }
+  .sobre .avatar img{
+    border-radius: 10%;
+    height: 25em;
+    width: auto;
+    margin-left: 7em;
+    padding-bottom: 1em;
+    position: relative;
+  }
+
+  @media(min-width:400px){
+    .sobre .avatar img{
+      margin-left: 2em;
+    }
+  }
+
   .site-title, .site-subtitle {
-    color: whitesmoke;
-    text-shadow: 1px 1px 1px rgba(0,0,0,.5);
+    color:#696969;
+    text-shadow: 1px 1px 1px rgba(247, 242, 242, 0.5);
     text-align: center;
   }
-  .site-subtitle{
-    font-style: italic;
+  .site-title{
+    font-size: 3em;
+    font-family: 'Poiret One', cursive;
   }
-  
+  .site-subtitle{
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5em;
+  }
+  .contato, 
+  .portfolio, 
+  .sobre{
+    padding: 2em;
+    color: #696969;
+    min-height: 100vh;
+
+  }
+  .portfolio{
+    background-image: url('../img/projetos2.png');
+    background-position: center center;
+  }
+  .contato {
+    background-image: url('../img/contato.png');
+    background-position: center center;
+  }
+  .contato h2, 
+  .portfolio h2, 
+  .sobre h2{
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+    color: #696969;
+    
+  }
+  .portfolio h2 {
+    padding-top: 2em;
+  }
+  .sobre h2 {
+    padding: 1em 0;
+  }
+  .sobre p{
+    text-indent: 3em;
+    text-align: justify;
+    margin-bottom: 1.5em;
+  }
+  .portfolio .grid{
+    display: grid;
+    gap: 1em; 
+  }
+  @media (min-width: 560px){
+    .portfolio .grid{
+      grid-template-columns: 250px 250px;
+    }
+  }
+  @media (min-width:860px){
+    .portfolio .grid{
+      grid-template-columns: repeat(3, 250px);
+      align-content: center;
+      justify-content: center;
+      height: calc(100vh - 4em - 48px - 1.5em);
+    }
+  }
+
+  .portfolio figure{
+    text-align: center;
+  }
+  .img-portfolio{
+    border-radius: 10%;
+    height: 180px;
+    width: 180px;
+    transition: transform .5s;
+  }
+  .img-portfolio:hover{
+    transform: scale(1.2);
+  }
+  .contato .icons {
+    text-align: center;
+  }
+  .contato a {
+    color:#696969;
+    font-size: 4em;
+    margin: 20px;
+    transition: text-shadow 1s;
+    
+  }
+  .contato a:active,
+  .contato a:hover{
+    text-decoration: none;
+    text-shadow: 0px 0px 10px #696969;
+   
+  }
